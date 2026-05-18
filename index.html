@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高級感早安圖生成器</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入輕量級農曆轉換庫 -->
+    <script src="https://cdn.jsdelivr.net/npm/lunar-javascript/lunar.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- 左側控制面板 -->
+        <div class="control-panel">
+            <h2>早安圖設定</h2>
+            
+            <div class="form-group">
+                <label for="main-element">視覺主體</label>
+                <select id="main-element">
+                    <option value="晨光、晨霧、山巒">山巒與晨霧</option>
+                    <option value="平靜的湖泊、水面倒影">湖泊與倒影</option>
+                    <option value="茂密的森林、樹影">森林與樹影</option>
+                    <option value="無垠的天空、雲霧">天空與雲霧</option>
+                    <option value="寧靜的房子、花影">房子與花影</option>
+                </select>
+                <input type="text" id="custom-main" placeholder="或自行輸入主體...">
+            </div>
+
+            <div class="form-group">
+                <label for="animal-element">動物點綴</label>
+                <select id="animal-element">
+                    <option value="無">無動物</option>
+                    <option value="遠方的飛鳥">鳥類</option>
+                    <option value="林間的小鹿">鹿</option>
+                    <option value="窗邊的貓咪">貓</option>
+                </select>
+                <input type="text" id="custom-animal" placeholder="或自行輸入動物...">
+            </div>
+
+            <div class="form-group">
+                <label for="style-element">畫面風格</label>
+                <select id="style-element">
+                    <option value="日系簡約、低飽和度">日系簡約</option>
+                    <option value="歐式復古、溫暖色調">歐風油畫</option>
+                    <option value="乾淨線條、微縮漫畫">極簡漫畫</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="accessory-element">環境配件</label>
+                <select id="accessory-element">
+                    <option value="無">無配件</option>
+                    <option value="翻開的書頁">書頁</option>
+                    <option value="冒著熱氣的杯子">咖啡杯</option>
+                    <option value="靜謐的窗邊">窗邊</option>
+                </select>
+                <input type="text" id="custom-accessory" placeholder="或自行輸入配件...">
+            </div>
+
+            <div class="form-group">
+                <label for="quote-input">勵志文字 (2-4句，用分號或換行隔開)</label>
+                <textarea id="quote-input" rows="4">心若向陽，無謂悲傷。
+願你的每一天，都充滿溫柔的晨光。</textarea>
+            </div>
+
+            <button id="generate-btn" class="btn-primary">生成早安圖</button>
+            <button id="download-btn" class="btn-secondary" disabled>下載圖片</button>
+        </div>
+
+        <!-- 右側預覽區 -->
+        <div class="preview-panel">
+            <div class="canvas-wrapper">
+                <canvas id="quote-canvas" width="800" height="1000"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
